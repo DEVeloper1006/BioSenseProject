@@ -64,4 +64,3 @@ plt.xlabel('Image Type')
 plt.ylabel('Average Confidence Score')
 plt.ylim(0, 1)  # Set y-axis limit from 0 to 1 (as confidence scores range from 0 to 1)
 plt.show()
-

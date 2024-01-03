@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from "react";
+import Header from "./header";
 
 export default function index(){
 
@@ -7,6 +8,7 @@ export default function index(){
 
   // This is a simple example of how to call the API and handle the response.
   // In practice you would want more error handling and type checking.
+  /*
   useEffect(() => {
     fetch("http://localhost:8080/api/home")
     .then(response => response.json())
@@ -17,17 +19,11 @@ export default function index(){
       setPeople(data.people)
       console.log(data.people)
   })}, []);
+  */
 
   return (
     <div>
-      <div>{message}</div>
-      {
-        people.map((person, index) => (
-          <div key={index}>
-            {person}
-          </div>
-        ))
-      }
+      <Header />
     </div>
   )
 }
