@@ -11,7 +11,7 @@ export default function Header () {
     }
 
     return (
-        <header className="navbar bg-base-100">
+        <header className="navbar bg-base-100 sticky">
             <div className="navbar-start px-3">
                 <Link href="/" className="btn btn-ghost text-3xl rounded-xl">biosense</Link>
             </div>
