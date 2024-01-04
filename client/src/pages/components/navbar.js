@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import Link from "next/link";
 
-export default function Header () {
+export default function NavBar () {
     const [theme, setTheme] = useState("corporate")
     
     const handleToggle = (e) => {
@@ -11,13 +11,13 @@ export default function Header () {
     }
 
     return (
-        <header className="navbar bg-base-100 sticky">
+        <header className="navbar bg-base-100 sticky flex flex-wrap p-11">
             <div className="navbar-start px-3">
-                <Link href="/" className="btn btn-ghost text-3xl rounded-xl">biosense</Link>
+                <Link href="/" className="btn btn-ghost text-xl md:text-2xl lg:text-3xl rounded-xl">biosense</Link>
             </div>
             <div className="navbar-end">
                 <div className="px-3">
-                    <Link href="/" className="btn btn-ghost text-lg rounded-xl">Learn more</Link>
+                    <Link href="./learn" className="btn btn-ghost text-xs md:text-md lg:text-lg rounded-xl">Learn more</Link>
                 </div>
                 <label className="swap swap-rotate px-3">
                     <input type="checkbox" className="theme-controller" value="synthwave" onChange={handleToggle}/>

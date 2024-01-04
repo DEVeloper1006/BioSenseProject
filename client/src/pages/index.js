@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from "react";
-import Header from "./components/header";
+import NavBar from "./components/navbar";
+import Title from "./components/title"
 
 export default function index(){
 
@@ -23,7 +24,8 @@ export default function index(){
 
   return (
     <div>
-      <Header />
+      <NavBar />
+      <Title />
     </div>
   )
 }
