@@ -42,7 +42,6 @@ const FileUpload = () => {
               fill="none"
               viewBox="0 0 20 16"
             >
-              {/* Your SVG path */}
             </svg>
             <p className="mb-2 text-sm">
               <span className="font-semibold">Click to upload</span> or drag and

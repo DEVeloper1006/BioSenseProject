@@ -2,9 +2,9 @@ import React from "react";
 import AnimatedTextWord from "./AnimatedTextWord";
 import FileUpload from "./FileUpload"
 
-export default function Title () {
+export default function Body () {
     return (
-        <div className="h-full border-2 border-red-400 p-10 mx-auto flex flex-col gap-11 items-center justify-center">
+        <div className="h-full p-10 mx-auto flex flex-col gap-11 items-center justify-center">
             <AnimatedTextWord text="biosense" />
             <button className="btn" onClick={()=>document.getElementById('my_modal_3').showModal()}>How does it work?</button>
             <dialog id="my_modal_3" className="modal">
@@ -17,6 +17,26 @@ export default function Title () {
                 </div>
             </dialog>
             <FileUpload />
+            <button className="btn" onClick={sendData}>Submit Image</button>
         </div>
     )
+}
+
+async function sendData () {
+    const img = document.getElementById("dropzone-file").value
+    console.log(img)
+    try {
+        const response = await fetch ("http://localhost:8080/api/home", {
+            mode : 'no-cors',
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ imgURL : img})
+        })
+        const responseData = response.json();
+        console.log(responseData)
+    } catch (error) {
+        console.log(error)
+    }
 }
