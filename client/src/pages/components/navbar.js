@@ -11,7 +11,7 @@ export default function NavBar () {
     }
 
     return (
-        <header className="navbar bg-base-100 sticky flex flex-wrap p-11">
+        <header className="navbar bg-base-100 sticky flex flex-wrap p-11 top-0 z-40">
             <div className="navbar-start px-3">
                 <Link href="/" className="btn btn-ghost text-xl md:text-2xl lg:text-3xl rounded-xl">biosense</Link>
             </div>

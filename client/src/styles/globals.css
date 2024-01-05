@@ -5,3 +5,9 @@
 html {
     scroll-behavior: smooth;
 }
+
+.progress-bar {
+    height: 10px;
+    background: var(--red);
+    transform-origin: 0%;
+}

@@ -4,7 +4,7 @@ import FileUpload from "./FileUpload"
 
 export default function Title () {
     return (
-        <div className="h-fit p-10 mx-auto flex flex-col gap-11 items-center justify-center">
+        <div className="h-full border-2 border-red-400 p-10 mx-auto flex flex-col gap-11 items-center justify-center">
             <AnimatedTextWord text="biosense" />
             <button className="btn" onClick={()=>document.getElementById('my_modal_3').showModal()}>How does it work?</button>
             <dialog id="my_modal_3" className="modal">

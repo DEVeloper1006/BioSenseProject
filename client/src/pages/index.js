@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from "react";
-import NavBar from "./components/navbar";
-import Title from "./components/title"
+import { motion, useScroll } from "framer-motion";
+import NavBar from "./components/NavBar";
+import Title from "./components/Title"
 
 export default function index(){
 
@@ -22,9 +23,12 @@ export default function index(){
   })}, []);
   */
 
+  const { scrollY } = useScroll();
+
   return (
-    <div>
+    <div className="h-fit">
       <NavBar />
+      <motion.div className="progress-bar" style={{ scaleX : scrollY}}/>
       <Title />
     </div>
   )

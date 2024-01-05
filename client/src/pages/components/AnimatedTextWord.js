@@ -46,7 +46,7 @@ const AnimatedTextWord = ({ text }) => {
     >
       {letters.map((letter, index) => (
         <motion.span variants={child} key={index}>
-          <h1 className="text-8xl font-bold select-none">{letter === " " ? "\u00A0" : letter}</h1>
+          <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold select-none">{letter === " " ? "\u00A0" : letter}</h1>
         </motion.span>
       ))}
     </motion.div>
