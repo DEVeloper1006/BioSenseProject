@@ -11,3 +11,13 @@ html {
     background: var(--red);
     transform-origin: 0%;
 }
+
+.drag-over {
+    transform: scale(1.05);
+    transition: transform 0.3s ease-in-out;
+}
+
+.drag-leave {
+    transform: scale(1);
+    transition: transform 0.3s ease-in-out;
+}

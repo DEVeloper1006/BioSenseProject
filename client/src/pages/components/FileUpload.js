@@ -1,6 +1,9 @@
-import React from "react";
+// FileUpload.js
+import React, { useState } from "react";
 
-const FileUpload = ({ image, setImage }) => {
+const FileUpload = ({ image, setImage, sendData }) => {
+  const [isDragOver, setIsDragOver] = useState(false);
+
   const handleFileInputChange = (e) => {
     const file = e.target.files[0];
     if (file) {
@@ -10,10 +13,19 @@ const FileUpload = ({ image, setImage }) => {
 
   const handleDragOver = (e) => {
     e.preventDefault();
+    e.stopPropagation();
+    e.dataTransfer.dropEffect = "copy";
+    setIsDragOver(true);
+  };
+
+  const handleDragLeave = (e) => {
+    setIsDragOver(false);
   };
 
   const handleDrop = (e) => {
     e.preventDefault();
+    e.stopPropagation();
+    setIsDragOver(false);
     const file = e.dataTransfer.files[0];
     if (file) {
       previewFile(file);
@@ -30,13 +42,14 @@ const FileUpload = ({ image, setImage }) => {
 
   return (
     <div
-      className="flex items-center justify-center w-full"
+      className={`flex items-center justify-center w-full ${isDragOver ? "drag-over" : "drag-leave"}`}
       onDragOver={handleDragOver}
+      onDragLeave={handleDragLeave}
       onDrop={handleDrop}
     >
       <label
         htmlFor="dropzone-file"
-        className="flex flex-col items-center justify-center w-full min-h-96 border-2 rounded-lg cursor-pointer"
+        className="dropzone flex flex-col items-center justify-center w-full min-h-96 border-2 rounded-lg cursor-pointer"
         style={
           image
             ? {
