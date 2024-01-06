@@ -8,7 +8,7 @@ export default function Body () {
     return (
         <div className="h-full p-10 mx-auto flex flex-col gap-11 items-center justify-center">
             <AnimatedTextWord text="biosense" />
-            <button className="btn" onClick={()=>document.getElementById('my_modal_3').showModal()}>How does it work?</button>
+            <button className="btn rounded-lg hover:scale-105" onClick={()=>document.getElementById('my_modal_3').showModal()}>How does it work?</button>
             <dialog id="my_modal_3" className="modal">
                 <div className="modal-box">
                     <form method="dialog">
@@ -19,7 +19,7 @@ export default function Body () {
                 </div>
             </dialog>
             <FileUpload image={previewSource} setImage={setPreviewSource}/>
-            <button className="btn" onClick={() => sendData(previewSource)}>Submit Image</button>
+            <button className="btn rounded-lg hover:scale-105" onClick={() => sendData(previewSource)}>Submit Image</button>
         </div>
     )
 }
