@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 
-const FileUpload = () => {
-  const [previewSource, setPreviewSource] = useState("");
+const FileUpload = ({image, setImage}) => {
 
   const handleFileInputChange = (e) => {
     const file = e.target.files[0];
@@ -14,7 +13,7 @@ const FileUpload = () => {
     const reader = new FileReader();
     reader.readAsDataURL(file);
     reader.onloadend = () => {
-      setPreviewSource(reader.result);
+      setImage(reader.result);
     };
   };
 
@@ -24,16 +23,16 @@ const FileUpload = () => {
         htmlFor="dropzone-file"
         className="flex flex-col items-center justify-center w-full min-h-96 border-2 rounded-lg cursor-pointer"
         style={
-          previewSource
+          image
             ? {
-                backgroundImage: `url(${previewSource})`,
+                backgroundImage: `url(${image})`,
                 backgroundSize: "cover",
                 backgroundPosition: "center",
               }
             : {}
         }
       >
-        {!previewSource && (
+        {!image && (
           <div className="flex flex-col items-center justify-center pt-5 pb-6">
             <svg
               className="w-8 h-8 mb-4"

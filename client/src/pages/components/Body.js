@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import AnimatedTextWord from "./AnimatedTextWord";
 import FileUpload from "./FileUpload"
 
 export default function Body () {
+
+    const [previewSource, setPreviewSource] = useState("");
+
     return (
         <div className="h-full p-10 mx-auto flex flex-col gap-11 items-center justify-center">
             <AnimatedTextWord text="biosense" />
@@ -16,8 +19,8 @@ export default function Body () {
                     <p className="py-4">Press ESC key or click on ✕ button to close</p>
                 </div>
             </dialog>
-            <FileUpload />
-            <button className="btn" onClick={sendData}>Submit Image</button>
+            <FileUpload image={previewSource} setImage={setPreviewSource}/>
+            <button className="btn" onClick={sendData(previewSource)}>Submit Image</button>
         </div>
     )
 }
