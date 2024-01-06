@@ -1,9 +1,20 @@
 import React from "react";
 
-const FileUpload = ({image, setImage}) => {
-
+const FileUpload = ({ image, setImage }) => {
   const handleFileInputChange = (e) => {
     const file = e.target.files[0];
+    if (file) {
+      previewFile(file);
+    }
+  };
+
+  const handleDragOver = (e) => {
+    e.preventDefault();
+  };
+
+  const handleDrop = (e) => {
+    e.preventDefault();
+    const file = e.dataTransfer.files[0];
     if (file) {
       previewFile(file);
     }
@@ -18,7 +29,11 @@ const FileUpload = ({image, setImage}) => {
   };
 
   return (
-    <div className="flex items-center justify-center w-full">
+    <div
+      className="flex items-center justify-center w-full"
+      onDragOver={handleDragOver}
+      onDrop={handleDrop}
+    >
       <label
         htmlFor="dropzone-file"
         className="flex flex-col items-center justify-center w-full min-h-96 border-2 rounded-lg cursor-pointer"
@@ -41,12 +56,13 @@ const FileUpload = ({image, setImage}) => {
               fill="none"
               viewBox="0 0 20 16"
             >
+              {/* Add any SVG icon for upload */}
             </svg>
             <p className="mb-2 text-sm">
               <span className="font-semibold">Click to upload</span> or drag and
               drop
             </p>
-            <p className="text-xs">SVG, PNG, JPG or GIF (MAX. 800x400px)</p>
+            <p className="text-xs">SVG, PNG, JPG, or GIF (MAX. 800x400px)</p>
           </div>
         )}
         <input
