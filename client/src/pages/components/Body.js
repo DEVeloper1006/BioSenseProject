@@ -3,7 +3,6 @@ import AnimatedTextWord from "./AnimatedTextWord";
 import FileUpload from "./FileUpload"
 
 export default function Body () {
-
     const [previewSource, setPreviewSource] = useState("");
 
     return (
@@ -20,18 +19,16 @@ export default function Body () {
                 </div>
             </dialog>
             <FileUpload image={previewSource} setImage={setPreviewSource}/>
-            <button className="btn" onClick={sendData(previewSource)}>Submit Image</button>
+            <button className="btn" onClick={() => sendData(previewSource)}>Submit Image</button>
         </div>
     )
 }
 
-async function sendData () {
-    const fileInput = document.getElementById("dropzone-file").files[0];
+async function sendData(img) {
     const formData = new FormData();
-    formData.append('image', fileInput);
-
+    formData.append('image', img);
     try {
-        const response = await fetch ("http://localhost:8080/api/home", {
+        const response = await fetch("http://localhost:8080/api/home", {
             method: 'POST',
             body: formData,
         });

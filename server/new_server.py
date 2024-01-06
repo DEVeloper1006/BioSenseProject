@@ -1,27 +1,23 @@
 import os
 from flask import Flask, request, jsonify
 from werkzeug.utils import secure_filename
-from flask_cors import CORS
+from flask_cors import CORS, cross_origin
 from keras.models import load_model
 import numpy as np
 from keras.preprocessing import image
 from keras.applications.vgg16 import preprocess_input, decode_predictions, VGG16
 
-
-UPLOAD_FOLDER = '/Users/devmody/Documents/Projects/biosense/server/uploads'
-ALLOWED_EXTENSIONS = set(['txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'])
-
 app = Flask(__name__)
-app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
-CORS(app)
-model = VGG16()
+cors = CORS(app, resources={r"/api/home": {"origins": "*"}}) 
 
-@app.route('/upload', methods=['POST'])
+@app.route('/api/home', methods=['POST'])
+@cross_origin()
 def fileUpload():
-    target=os.path.join(UPLOAD_FOLDER,'test_docs')
-    if not os.path.isdir(target):
-        os.mkdir(target)
-    file = request.files['file'] 
+    data_url = request.form.get('image', '')
+    print(data_url)
+    return jsonify({ "message" : str(data_url)})
+    
+    '''
     filename = secure_filename(file.filename)
     destination="/".join([target, filename])
     file.save(destination)
@@ -37,6 +33,7 @@ def fileUpload():
     
     response = jsonify({'result' : str(label[2])})
     return response
+    '''
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=True, port=8080)

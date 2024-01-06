@@ -20,7 +20,6 @@ from sklearn.metrics import (classification_report, confusion_matrix)
 NUMBER_OF_EPOCHS=10
 BATCH_SIZE= 32
 
-
 trainAug = ImageDataGenerator(
   rescale=1./255.,
   rotation_range=15,
