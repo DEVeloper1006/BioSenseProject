@@ -1,39 +1,51 @@
-import os
 from flask import Flask, request, jsonify
-from werkzeug.utils import secure_filename
-from flask_cors import CORS, cross_origin
-from keras.models import load_model
+from keras.applications.vgg16 import VGG16, preprocess_input, decode_predictions
+from PIL import Image
+import base64
 import numpy as np
-from keras.preprocessing import image
-from keras.applications.vgg16 import preprocess_input, decode_predictions, VGG16
+from flask_cors import CORS, cross_origin
+from io import BytesIO
 
 app = Flask(__name__)
-cors = CORS(app, resources={r"/api/home": {"origins": "*"}}) 
+cors = CORS(app, resources={r"/api/home": {"origins": "*"}})
+model = VGG16(weights='imagenet', include_top=True)
 
 @app.route('/api/home', methods=['POST'])
 @cross_origin()
 def fileUpload():
     data_url = request.form.get('image', '')
-    print(data_url)
-    return jsonify({ "message" : str(data_url)})
-    
-    '''
-    filename = secure_filename(file.filename)
-    destination="/".join([target, filename])
-    file.save(destination)
-    
-    img = image.load_img(destination, target_size=(224, 224))
-    img = image.img_to_array(img)
-    img = img.reshape((1, img.shape[0],img.shape[1], img.shape[2]))
-    img = preprocess_input(img)
-    
-    predictions = model.predict(img)
-    result = decode_predictions(predictions)
-    label = result[0][0]
-    
-    response = jsonify({'result' : str(label[2])})
-    return response
-    '''
+    encoded_data = data_url.split(',')[1]  # Extracting the base64-encoded part
+    try:
+        decoded_data = base64.b64decode(encoded_data)
+        img = Image.open(BytesIO(decoded_data)).resize((224, 224))
+        img = img.convert('RGB')  # Ensure the image is in RGB format
+        img_array = np.array(img)
+        img_array = preprocess_input(img_array)  # Preprocess the image
+        img_array = np.expand_dims(img_array, axis=0)  # Add batch dimension
+        predictions = model.predict(img_array)
+        
+        decoded_predictions = decode_predictions(predictions, top=3)[0]
+        
+        results = []
+        for prediction in decoded_predictions:
+            if len(prediction) == 3:
+                label, description, probability = prediction
+                results.append({
+                    'label': label,
+                    'description': description,
+                    'probability': float(probability)
+                })
+            elif len(prediction) == 4:
+                class_id, label, description, probability = prediction
+                results.append({
+                    'label': label,
+                    'description': description,
+                    'probability': float(probability)
+                })
+        
+        return jsonify({'predictions': results})
+    except Exception as e:
+        return jsonify({'error': str(e)})
 
 if __name__ == "__main__":
     app.run(debug=True, port=8080)
