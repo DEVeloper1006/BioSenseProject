@@ -23,20 +23,18 @@ export default function Body () {
 }
 
 async function sendData () {
-    const img = document.getElementById("dropzone-file").value
-    console.log(img)
+    const fileInput = document.getElementById("dropzone-file").files[0];
+    const formData = new FormData();
+    formData.append('image', fileInput);
+
     try {
         const response = await fetch ("http://localhost:8080/api/home", {
-            mode : 'no-cors',
             method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({ imgURL : img})
-        })
-        const responseData = response.json();
-        console.log(responseData)
+            body: formData,
+        });
+        const responseData = await response.json();
+        console.log(responseData);
     } catch (error) {
-        console.log(error)
+        console.log(error);
     }
 }

@@ -14,8 +14,9 @@ model = VGG16()
 @app.route('/api/home', methods=['POST'])
 @cross_origin()
 def fileUpload():
-    #data = request.json()
-    return jsonify({"message": "Data received successfully"})
+    uploaded_file = request.files['image']
+    print(uploaded_file)
+    return jsonify({ "message" : "data sent successfully"})
     
     '''
     img = image.load_img(destination, target_size=(224, 224))
