@@ -17,7 +17,7 @@ export default function NavBar () {
     }, [theme]);
 
     return (
-        <header className="navbar bg-base-100 flex flex-wrap p-11 sticky top-0">
+        <header className="navbar bg-base-100 flex flex-wrap p-11">
             <div className="navbar-start px-3">
                 <Link href="/" className="btn btn-ghost text-xl md:text-2xl lg:text-3xl rounded-xl hover:scale-105">biosense</Link>
             </div>

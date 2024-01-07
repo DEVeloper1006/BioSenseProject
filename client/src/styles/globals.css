@@ -6,12 +6,6 @@ html {
     scroll-behavior: smooth;
 }
 
-.progress-bar {
-    height: 10px;
-    background: var(--red);
-    transform-origin: 0%;
-}
-
 .drag-over {
     transform: scale(1.05);
     transition: transform 0.3s ease-in-out;
@@ -21,3 +15,8 @@ html {
     transform: scale(1);
     transition: transform 0.3s ease-in-out;
 }
+
+.container:hover {
+    transform: scale(1.03);
+}
+

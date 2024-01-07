@@ -42,7 +42,7 @@ const FileUpload = ({ image, setImage, sendData }) => {
 
   return (
     <div
-      className={`flex items-center justify-center w-full ${isDragOver ? "drag-over" : "drag-leave"}`}
+      className={`container flex items-center justify-center w-full ${isDragOver ? "drag-over" : "drag-leave"}`}
       onDragOver={handleDragOver}
       onDragLeave={handleDragLeave}
       onDrop={handleDrop}
