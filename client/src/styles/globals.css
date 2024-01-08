@@ -16,10 +16,6 @@ html {
     transition: transform 0.3s ease-in-out;
 }
 
-.container {
-    max-width: 50%;
-}
-
 .container:hover {
     transform: scale(1.03);
 }
@@ -36,3 +32,27 @@ html {
     opacity: 1;
 }
 
+.parent {
+    gap: 20px;
+}
+
+.results {
+    width: 47%;
+}
+
+.rotating-image {
+    animation: rotateImage 5s linear infinite; /* Change duration and timing function as needed */
+}
+  
+@keyframes rotateImage {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+}
+
+.logo {
+    border: 2px solid red;
+}

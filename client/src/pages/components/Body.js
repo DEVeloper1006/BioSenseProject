@@ -16,12 +16,15 @@ export default function Body () {
             </div>
             <div className="h-full p-10 mx-auto flex flex-col gap-11 items-center justify-center">
                 <Hero />
-                <div className="w-full flex flex-wrap p-4 gap-5">
-                    <FileUpload image={previewSource} setImage={setPreviewSource}/>
-                    <div className="w-1/2 justify-center items-center border-2 border-red-500">
-                        <h2 className="w-fit h-fit text-3xl text-wrap font-semibold">Hello World</h2>
+                <div className="parent w-full flex flex-wrap p-4">
+                    <div className="w-1/2 flex flex-col items-center justify-center gap-3">
+                        <FileUpload image={previewSource} setImage={setPreviewSource}/>
+                        <button className="btn w-full rounded-lg hover:scale-105" onClick={() => sendData(previewSource)}>Submit Image</button>
                     </div>
-                    <button className="btn w-full rounded-lg hover:scale-105" onClick={() => sendData(previewSource)}>Submit Image</button>
+                    <div className="w-1/2 results text-center border-2 border-red-500 flex flex-col gap-40">
+                        <h2 className="font-semibold text-2xl">Test Results</h2>
+                        <h3 className="text-3xl test-results"></h3>
+                    </div>
                 </div>
             </div>
         </>
@@ -35,6 +38,7 @@ function alertOK () {
 async function sendData(img) {
     if (!img) document.getElementById('alertTag').classList.remove("hidden");
     else{
+        const formData = new FormData();
         formData.append('image', img);
         try {
             const response = await fetch("http://localhost:8080/api/home", {
@@ -42,7 +46,7 @@ async function sendData(img) {
                 body: formData,
             });
             const responseData = await response.json();
-            console.log(responseData);
+            document.querySelector('.test-results').textContent = responseData['predictions']
         } catch (error) {
             console.log(error);
         }
