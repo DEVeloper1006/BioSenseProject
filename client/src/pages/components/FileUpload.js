@@ -42,14 +42,14 @@ const FileUpload = ({ image, setImage, sendData }) => {
 
   return (
     <div
-      className={`container flex items-center justify-center w-full ${isDragOver ? "drag-over" : "drag-leave"}`}
+      className={`container flex items-center justify-center object-contain ${isDragOver ? "drag-over" : "drag-leave"}`}
       onDragOver={handleDragOver}
       onDragLeave={handleDragLeave}
       onDrop={handleDrop}
     >
       <label
         htmlFor="dropzone-file"
-        className="dropzone flex flex-col items-center justify-center w-full min-h-96 border-2 rounded-lg cursor-pointer"
+        className="dropzone flex flex-col items-center object-contain justify-center w-full min-h-96 border-2 rounded-lg cursor-pointer"
         style={
           image
             ? {
@@ -75,7 +75,7 @@ const FileUpload = ({ image, setImage, sendData }) => {
               <span className="font-semibold">Click to upload</span> or drag and
               drop
             </p>
-            <p className="text-xs">SVG, PNG, JPG, or GIF (MAX. 800x400px)</p>
+            <p className="text-xs">PNG or JPG (MAX. 800x400px)</p>
           </div>
         )}
         <input

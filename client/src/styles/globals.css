@@ -16,7 +16,23 @@ html {
     transition: transform 0.3s ease-in-out;
 }
 
+.container {
+    max-width: 50%;
+}
+
 .container:hover {
     transform: scale(1.03);
+}
+
+.fade-enter {
+    opacity: 0;
+  }
+  
+.fade-enter-active {
+    transition: opacity 0.3s ease-in-out;
+}
+  
+.fade-enter-done {
+    opacity: 1;
 }
 
