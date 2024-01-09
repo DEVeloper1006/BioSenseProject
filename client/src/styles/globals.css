@@ -50,3 +50,7 @@ html {
     background-image: url("/mesh-gradient.png");
     background-size: cover;
 }
+
+ul {
+    list-style-type: circle;
+}

@@ -20,7 +20,7 @@ export default function Body () {
                 <div className="flex flex-col gap-4">
 
                     <div className="collapse collapse-arrow bg-base-200 learn-container w-full h-fit text-center p-5">
-                        <input type="radio" name="my-accordion-3" checked="checked" className="text-white"/>
+                        <input type="radio" name="my-accordion-3" checked="checked" style={{color:"white"}}/>
                         <div className="p-10 flex flex-col gap-10 collapse-title">
                             <h1 className="ml-16 text-8xl text-slate-50 select-none" data-aos="fade-right">What is Pneumonia?</h1>
                         </div>
@@ -48,12 +48,15 @@ export default function Body () {
                         <div className="p-10 flex flex-col gap-10 collapse-title">
                             <h1 className="ml-16 text-8xl text-slate-50 select-none" data-aos="fade-right">Chest X-Ray Usage</h1>
                         </div>
-                        <div className="collapse-content">
+                        <div className="collapse-content flex flex-col gap-5">
                             <p className="text-slate-50 text-3xl leading-relaxed select-none">
                                 Due to its severity, early diagnosis can greatly improve prognosis and survival rates in patients. <span className="bg-red-500">Chest x-rays are very commonly used</span> for providing a diagnosis alongside a medical history and a physical exam.
                                 <br></br><br></br>
                                 Even though CT scans are much more precise, they are not routinely used due to higher cost and time usage, along with greater exposure to radiation. Therefore, chest x-rays are currently the <span className="bg-red-500">standard radiographic test</span> for pneumonia evaluation. 
                             </p>
+                            <div>
+                                
+                            </div>
                         </div>
                     </div>
 
