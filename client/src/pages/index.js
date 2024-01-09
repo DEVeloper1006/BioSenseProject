@@ -3,13 +3,13 @@ import { motion, useScroll } from "framer-motion";
 import NavBar from "./components/NavBar";
 import Body from "./components/Body"
 import Head from "next/head";
+import Footer from "./components/Footer"
 
 export default function index(){
 
   return (
     <div className="h-fit">
       <Head>
-        <meta charset="UTF-8" />
         <meta name="viewport" content="width=1.0, initial-scale=1.0" />
         <title>biosense</title>
         <meta name="Title" content="biosense" />
@@ -19,6 +19,7 @@ export default function index(){
       </Head>
       <NavBar />
       <Body />
+      <Footer />
     </div>
   )
 }
