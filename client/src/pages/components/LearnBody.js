@@ -26,7 +26,7 @@ export default function Body () {
                         </div>
                         <div className="collapse-content">
                             <p className="content">
-                                Pneumonia, an infection of the lungs caused by bacteria, viruses, or fungi, is <span className="bg-red-500">one of the leading causes of hospitalizations and deaths annually.</span> Pneumonia causes pleural effusion, in which the air sacs in the lungs, called alveoli, become filled with fluid or pus.
+                                Pneumonia, an infection of the lungs caused by bacteria, viruses, or fungi, is <span className="font-semibold">one of the leading causes of hospitalizations and deaths annually.</span> Pneumonia causes pleural effusion, in which the air sacs in the lungs, called alveoli, become filled with fluid or pus.
                             </p>
                         </div>
                     </div>
@@ -50,9 +50,9 @@ export default function Body () {
                         </div>
                         <div className="collapse-content">
                             <p className="content">
-                                Due to its severity, early diagnosis can greatly improve prognosis and survival rates in patients. <span className="bg-red-500">Chest x-rays are very commonly used</span> for providing a diagnosis alongside a medical history and a physical exam.
+                                Due to its severity, early diagnosis can greatly improve prognosis and survival rates in patients. <span className="font-semibold">Chest x-rays are very commonly used</span> for providing a diagnosis alongside a medical history and a physical exam.
                                 <br></br><br></br>
-                                Even though CT scans are much more precise, they are not routinely used due to higher cost and time usage, along with greater exposure to radiation. Therefore, chest x-rays are currently the <span className="bg-red-500">standard radiographic test</span> for pneumonia evaluation. 
+                                Even though CT scans are much more precise, they are not routinely used due to higher cost and time usage, along with greater exposure to radiation. Therefore, chest x-rays are currently the <span className="font-semibold">standard radiographic test</span> for pneumonia evaluation. 
                             </p>
                         </div>
                     </div>

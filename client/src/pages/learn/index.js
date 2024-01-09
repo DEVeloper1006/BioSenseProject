@@ -2,6 +2,7 @@ import React from "react"
 import NavBar from "../components/NavBar"
 import Head from "next/head"
 import LearnBody from "../components/LearnBody"
+import Footer from "../components/Footer"
 
 export default function Learn () {
     return (
@@ -17,6 +18,7 @@ export default function Learn () {
             </Head>
             <NavBar />
             <LearnBody />
+            <Footer />
         </div>
     )
 }

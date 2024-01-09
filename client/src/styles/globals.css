@@ -63,3 +63,7 @@ html {
 ul {
     list-style-type: circle;
 }
+
+.blur {
+    backdrop-filter: blur(5px);
+}
