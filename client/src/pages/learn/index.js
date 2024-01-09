@@ -1,5 +1,5 @@
 import React from "react"
-import NavBar from "../components/NavBar"
+import NavBarLearn from "./NavBarLearn"
 import Head from "next/head"
 import LearnBody from "../components/LearnBody"
 import Footer from "../components/Footer"
@@ -16,7 +16,7 @@ export default function Learn () {
                 <meta name="Description" content="A website that uses a Tentative AI model to detect pneuomonia in chest x-ray images" />
                 <link rel='icon' href='/logo.png' type='image/x-icon'/>
             </Head>
-            <NavBar />
+            <NavBarLearn />
             <LearnBody />
             <Footer />
         </div>
