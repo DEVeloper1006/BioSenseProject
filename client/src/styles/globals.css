@@ -49,6 +49,15 @@ html {
 .learn-container {
     background-image: url("/mesh-gradient.png");
     background-size: cover;
+    @apply collapse collapse-arrow bg-base-200 w-fit h-fit text-center md:p-5 rounded-xl
+}
+
+.title {
+    @apply text-4xl md:text-8xl text-slate-50 select-none;
+}
+
+.content {
+    @apply text-slate-50 text-lg md:text-3xl leading-relaxed select-none;
 }
 
 ul {

@@ -7,7 +7,7 @@ export default function Body () {
 
     return (
         <>
-            <div className="h-full p-10 mx-auto flex flex-col gap-11 items-center justify-center">
+            <div className="h-full p-5 mx-auto flex flex-col gap-11 items-center justify-center">
                 <Hero />
                 <div className="parent w-full flex flex-wrap p-4">
                     <div className="child w-1/2 flex flex-col items-center justify-center gap-3">
