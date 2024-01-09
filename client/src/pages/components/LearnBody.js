@@ -20,7 +20,7 @@ export default function Body () {
                 <div className="flex flex-col gap-4">
 
                     <div className="collapse collapse-arrow bg-base-200 learn-container w-full h-fit text-center p-5">
-                        <input type="radio" name="my-accordion-1" checked="checked" className="text-white"/>
+                        <input type="radio" name="my-accordion-3" checked="checked" className="text-white"/>
                         <div className="p-10 flex flex-col gap-10 collapse-title">
                             <h1 className="ml-16 text-8xl text-slate-50 select-none" data-aos="fade-right">What is Pneumonia?</h1>
                         </div>
@@ -32,7 +32,7 @@ export default function Body () {
                     </div>
 
                     <div className="collapse collapse-arrow bg-base-200 learn-container w-full h-fit text-center p-5">
-                        <input type="radio" name="my-accordion-2" checked="checked" className="text-white"/>
+                        <input type="radio" name="my-accordion-3" checked="checked" className="text-white"/>
                         <div className="p-10 flex flex-col gap-10 collapse-title">
                             <h1 className="ml-16 text-8xl text-slate-50 select-none" data-aos="fade-right">Symptoms of Pneumonia</h1>
                         </div>
