@@ -40,7 +40,7 @@ html {
     width: 47%;
 }
 
-@media (max-width: 778px) {
+@media (max-width: 850px) {
     .child {
         width: 100%;
     }
@@ -66,4 +66,16 @@ ul {
 
 .blur {
     backdrop-filter: blur(5px);
+}
+
+.test-results {
+    background-color: rgb(24, 24, 41);
+}
+
+.normal {
+    @apply text-green-400 text-3xl;
+}
+
+.pneumonia {
+    @apply text-red-500 text-3xl;
 }

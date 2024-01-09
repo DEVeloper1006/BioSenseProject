@@ -20,6 +20,17 @@ export default function NavBar () {
         document.querySelector('html').setAttribute("data-theme", theme);
         document.querySelector('.theme-controller').value = theme;
         document.querySelector('.logo').src = logoTheme
+        if (theme === "corporate") {
+            document.getElementById("results").classList.remove("bg-slate-200")
+            document.getElementById('results').classList.remove("text-black")
+            document.getElementById("results").classList.add("bg-corporateText")
+            document.getElementById('results').classList.add("text-slate-50")
+        } else {
+            document.getElementById("results").classList.remove("bg-corporateText")
+            document.getElementById('results').classList.remove("text-slate-50")
+            document.getElementById("results").classList.add("bg-slate-200")
+            document.getElementById('results').classList.add("text-black")
+        }
     }, [theme, logoTheme]);
 
     return (

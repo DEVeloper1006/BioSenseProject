@@ -27,8 +27,8 @@ const Footer = () => {
                 }} className="select-none"/>
                 <p className="select-none">Copyright © 2024 - All rights reserved</p>
             </aside> 
-            <div className="grid-flow-col gap-4 md:place-self-center md:justify-self-end">
-                <input id="feedback" type="text" placeholder="Write Feedback" className="w-full max-w-xs outline-none p-3 rounded-xl bg-neutral border-2" />
+            <div className="grid-flow-col gap-4 md:place-self-center md:justify-self-end flex-wrap">
+                <input id="feedback" type="text" placeholder="Write Feedback" className="w-full max-w-xs outline-none p-3 rounded-xl bg-neutral border-2 xs: text-md" />
                 <button className="btn btn-accent hover:scale-105 rounded-xl" onClick={sendEmail}>Send Feedback</button>
             </div>
         </footer>

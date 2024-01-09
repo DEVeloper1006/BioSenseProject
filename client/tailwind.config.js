@@ -14,8 +14,11 @@ module.exports = {
       },
       fontFamily:{
         poppins: ["Poppins", "sans-serif"]
+      },
+      colors : {
+        'corporateText' : '#181829'
       }
-    },
+    }
   },
   plugins: [require("daisyui")],
   daisyui: {

@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import FileUpload from "./FileUpload"
 import Hero from "./Hero";
+import Results from "./TestResults"
 
 export default function Body () {
     const [previewSource, setPreviewSource] = useState("");
-
+    const [results, setResults] = useState(1)
     return (
         <>
             <div className="h-full p-5 mx-auto flex flex-col gap-11 items-center justify-center">
@@ -12,11 +13,11 @@ export default function Body () {
                 <div className="parent w-full flex flex-wrap p-4">
                     <div className="child w-1/2 flex flex-col items-center justify-center gap-3">
                         <FileUpload image={previewSource} setImage={setPreviewSource}/>
-                        <button className="btn w-full rounded-lg hover:scale-105" onClick={() => sendData(previewSource)}>Submit Image</button>
+                        <button className="btn w-full rounded-lg hover:scale-105" onClick={() => sendData(previewSource, setResults)}>Submit Image</button>
                     </div>
-                    <div className="child w-1/2 results text-center flex flex-col justify-between border-2 border-red-500 p-14">
-                        <h2 className="font-semibold text-2xl">Test Results</h2>
-                        <h3 className="text-3xl test-results"></h3>
+                    <div className="child w-1/2 results flex flex-col gap-8 rounded-xl p-14 select-none" id="results">
+                        <h2 className="text-4xl text-center">Test Results</h2>
+                        <Results isPneumonia={results} />
                     </div>
                 </div>
             </div>
@@ -24,7 +25,7 @@ export default function Body () {
     )
 }
 
-async function sendData(img) {
+async function sendData(img, setResult) {
     if (!img) alert("Please input an image.")
     else{
         const formData = new FormData();
@@ -35,7 +36,11 @@ async function sendData(img) {
                 body: formData,
             });
             const responseData = await response.json();
-            document.querySelector('.test-results').textContent = responseData['predictions']
+            if (responseData['predictions'] == "Normal"){
+                setResult(2)
+            } else {
+                setResult(3)
+            }
         } catch (error) {
             console.log(error);
         }

@@ -75,7 +75,7 @@ const FileUpload = ({ image, setImage, sendData }) => {
               <span className="font-semibold">Click to upload</span> or drag and
               drop
             </p>
-            <p className="text-xs">PNG or JPG (MAX. 800x400px)</p>
+            <p className="text-xs">PNG or JPG</p>
           </div>
         )}
         <input
