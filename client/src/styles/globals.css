@@ -40,15 +40,8 @@ html {
     width: 47%;
 }
 
-.rotating-image {
-    animation: rotateImage 5s linear infinite; /* Change duration and timing function as needed */
-}
-  
-@keyframes rotateImage {
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(360deg);
+@media (max-width: 778px) {
+    .child {
+        width: 100%;
     }
 }

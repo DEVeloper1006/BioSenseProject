@@ -10,11 +10,11 @@ export default function Body () {
             <div className="h-full p-10 mx-auto flex flex-col gap-11 items-center justify-center">
                 <Hero />
                 <div className="parent w-full flex flex-wrap p-4">
-                    <div className="w-1/2 flex flex-col items-center justify-center gap-3">
+                    <div className="child w-1/2 flex flex-col items-center justify-center gap-3">
                         <FileUpload image={previewSource} setImage={setPreviewSource}/>
                         <button className="btn w-full rounded-lg hover:scale-105" onClick={() => sendData(previewSource)}>Submit Image</button>
                     </div>
-                    <div className="w-1/2 results text-center flex flex-col gap-40">
+                    <div className="child w-1/2 results text-center flex flex-col justify-between border-2 border-red-500 p-14">
                         <h2 className="font-semibold text-2xl">Test Results</h2>
                         <h3 className="text-3xl test-results"></h3>
                     </div>
@@ -41,3 +41,5 @@ async function sendData(img) {
         }
     }
 }
+
+//778px
