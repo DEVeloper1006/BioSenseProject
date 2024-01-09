@@ -41,5 +41,3 @@ async function sendData(img) {
         }
     }
 }
-
-//778px
