@@ -21,7 +21,7 @@ export default function Body () {
                         <FileUpload image={previewSource} setImage={setPreviewSource}/>
                         <button className="btn w-full rounded-lg hover:scale-105" onClick={() => sendData(previewSource)}>Submit Image</button>
                     </div>
-                    <div className="w-1/2 results text-center border-2 border-red-500 flex flex-col gap-40">
+                    <div className="w-1/2 results text-center flex flex-col gap-40">
                         <h2 className="font-semibold text-2xl">Test Results</h2>
                         <h3 className="text-3xl test-results"></h3>
                     </div>

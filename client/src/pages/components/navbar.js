@@ -1,17 +1,18 @@
 import React, { useState, useEffect }  from "react"
 import Link from "next/link";
-import logo from "../../../public/logo.png"
-import darkLogo from "../../../public/darkLogo.png"
 
 export default function NavBar () {
 
+    const logoPath = "/logo.png"
+    const darkLogoPath = "/darkLogo.png"
     const [theme, setTheme] = useState("corporate");
-    const [logoTheme, setLogoTheme] = useState(logo)
+    const [logoTheme, setLogoTheme] = useState(logoPath)
 
     const handleToggle = () => {
         const newTheme = theme === "corporate" ? "business" : "corporate";
         setTheme(newTheme);
-        setLogoTheme((oldTheme) => oldTheme === "corporate" ? darkLogo : logo)
+        const newLogoTheme = theme === "corporate" ? darkLogoPath : logoPath
+        setLogoTheme(newLogoTheme)
     };
 
     // Update the theme whenever 'theme' state changes

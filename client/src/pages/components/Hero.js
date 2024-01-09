@@ -18,7 +18,7 @@ const Hero = () => {
     return (
         <>
             <div className="flex flex-wrap justify-center items-center" data-aos="fade-left">
-                <Image src={logo} alt="logo" style={{
+                <img src="/logo.png" alt="logo" style={{
                     width : "250px",
                     height: "auto"
                 }} className="logo select-none"/>
