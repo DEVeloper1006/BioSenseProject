@@ -15,7 +15,7 @@ const Title = () => {
 
     return (
         <>
-            <div className="flex flex-wrap justify-center items-center" data-aos="fade-left">
+            <div className="flex flex-wrap justify-center items-center gap-3" data-aos="fade-left">
                 <img src="/logo.png" alt="logo" style={{
                     width : "250px",
                     height: "auto"

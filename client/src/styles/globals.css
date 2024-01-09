@@ -45,3 +45,8 @@ html {
         width: 100%;
     }
 }
+
+.learn-container {
+    background-image: url("/mesh-gradient.png");
+    background-size: cover;
+}
