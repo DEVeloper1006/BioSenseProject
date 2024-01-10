@@ -25,7 +25,7 @@ const Footer = () => {
                     width : "100px",
                     height: "auto"
                 }} className="select-none"/>
-                <p className="select-none">Copyright © 2024 - All rights reserved</p>
+                <p className="select-none">biosense 2024</p>
             </aside> 
             <div className="grid-flow-col gap-4 md:place-self-center md:justify-self-end flex-wrap">
                 <input id="feedback" type="text" placeholder="Write Feedback" className="w-full max-w-xs outline-none p-3 rounded-xl bg-neutral border-2 xs: text-md" />

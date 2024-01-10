@@ -12,7 +12,7 @@ const Results = ({isPneumonia}) => {
         return (
             <div className="flex flex-col gap-2">
                 <h2 className="normal text-center">Normal</h2>
-                <p>However it is advised that you check for symptoms during the next few weeks and book an appointment with a Radiologist. <br></br><br></br>As of now, our AI model is only 88% accurate on the training set. Our goal is to achieve at least 95% accuracy in the near future.</p>
+                <p>However it is advised that you check for symptoms during the next few weeks and book an appointment with your Physician. <br></br><br></br>As of now, our AI model is only 88% accurate on the training set. Our goal is to achieve at least 95% accuracy in the near future.</p>
             </div>
         )
     } else {
