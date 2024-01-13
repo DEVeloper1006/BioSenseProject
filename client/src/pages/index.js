@@ -1,8 +1,8 @@
 import React, {useEffect, useState} from "react";
-import NavBar from "../pages/components/NavBar";
-import Body from "../pages/components/Body"
+import NavBar from "./components/NavBar";
+import Body from "./components/Body";
 import Head from "next/head";
-import Footer from "../pages/components/Footer"
+import Footer from "./components/Footer";
 
 export default function index(){
 
