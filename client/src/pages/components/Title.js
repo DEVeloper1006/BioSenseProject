@@ -2,6 +2,7 @@ import AnimatedTextWord from "./AnimatedTextWord"
 import Aos from "aos"
 import { useEffect } from "react"
 import "../../../node_modules/aos/dist/aos.css";
+import Image from "next/image";
 
 const Title = () => {
 
@@ -16,10 +17,7 @@ const Title = () => {
     return (
         <>
             <div className="flex flex-wrap justify-center items-center gap-3" data-aos="fade-left">
-                <img src="/logo.png" alt="logo" style={{
-                    width : "250px",
-                    height: "auto"
-                }} className="logo select-none"/>
+                <Image src="/logo.png" alt="logo" className="logo select-none" width={200} height={200} />
                 <AnimatedTextWord text="biosense" />
             </div>
         </>

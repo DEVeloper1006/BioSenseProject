@@ -1,5 +1,6 @@
 import React from "react";
 import emailjs from "emailjs-com";
+import Image from "next/image";
 
 const Footer = () => {
 
@@ -19,10 +20,7 @@ const Footer = () => {
     return (
         <footer className="footer items-center p-4 bg-neutral text-neutral-content">
             <aside className="items-center grid-flow-col">
-                <img src="/darkLogo.png" alt="logo" style={{
-                    width : "100px",
-                    height: "auto"
-                }} className="select-none"/>
+                <Image src="/darkLogo.png" alt="logo" className="select-none" width={150} height={150}/>
                 <p className="select-none">Copyright © 2024 - All rights reserved</p>
             </aside> 
             <div className="grid-flow-col gap-4 md:place-self-center md:justify-self-end flex-wrap">
