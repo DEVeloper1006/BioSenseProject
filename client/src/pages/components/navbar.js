@@ -4,7 +4,7 @@ import Link from "next/link";
 const NavBar = () => {
 
     const logoPath = "./logo.png"
-    const darkLogoPath = "./darkLogo.png"
+    const darkLogoPath = "./dark-logo.png"
     const [theme, setTheme] = useState("corporate");
     const [logoTheme, setLogoTheme] = useState(logoPath)
 
