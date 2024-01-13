@@ -2,13 +2,18 @@ import React from "react";
 import { motion } from "framer-motion";
 
 const AnimatedTextWord = ({ text }) => {
+  // Check if the text prop is defined
+  if (!text) {
+    return null; // or handle it in another way that makes sense for your application
+  }
+
   const letters = Array.from(text);
 
   const container = {
     hidden: { opacity: 0 },
     visible: (i = 1) => ({
       opacity: 1,
-      transition: { staggerChildren: 0.03, delayChildren: 0.04 * i},
+      transition: { staggerChildren: 0.03, delayChildren: 0.04 * i },
     }),
   };
 
@@ -21,7 +26,7 @@ const AnimatedTextWord = ({ text }) => {
         type: "spring",
         damping: 12,
         stiffness: 100,
-        duration : 2
+        duration: 2,
       },
     },
     hidden: {
@@ -32,7 +37,7 @@ const AnimatedTextWord = ({ text }) => {
         type: "spring",
         damping: 12,
         stiffness: 100,
-        duration : 2
+        duration: 2,
       },
     },
   };
@@ -46,7 +51,9 @@ const AnimatedTextWord = ({ text }) => {
     >
       {letters.map((letter, index) => (
         <motion.span variants={child} key={index}>
-          <h1 className="text-7xl lg:text-8xl font-bold select-none">{letter === " " ? "\u00A0" : letter}</h1>
+          <h1 className="text-7xl lg:text-8xl font-bold select-none">
+            {letter === " " ? "\u00A0" : letter}
+          </h1>
         </motion.span>
       ))}
     </motion.div>
