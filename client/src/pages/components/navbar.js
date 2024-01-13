@@ -1,7 +1,7 @@
 import React, { useState, useEffect }  from "react"
 import Link from "next/link";
 
-export default function NavBar () {
+const NavBar = () => {
 
     const logoPath = "/logo.png"
     const darkLogoPath = "/darkLogo.png"
@@ -51,3 +51,5 @@ export default function NavBar () {
         </header>
     )
 }
+
+export default NavBar
