@@ -17,7 +17,10 @@ const Title = () => {
     return (
         <>
             <div className="flex flex-wrap justify-center items-center gap-3" data-aos="fade-left">
-                <Image src="/logo.png" alt="logo" className="logo select-none" width={200} height={200} />
+                <img src="/logo.png" alt="logo" style={{
+                    width : "250px",
+                    height: "auto"
+                }} className="logo select-none"/>
                 <AnimatedTextWord text="biosense" />
             </div>
         </>

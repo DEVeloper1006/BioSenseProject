@@ -20,7 +20,10 @@ const Footer = () => {
     return (
         <footer className="footer items-center p-4 bg-neutral text-neutral-content">
             <aside className="items-center grid-flow-col">
-                <Image src="/dark-logo.png" alt="logo" className="select-none" width={150} height={150}/>
+                <img src="/dark-logo.png" alt="logo" style={{
+                    width : "100px",
+                    height: "auto"
+                }} className="select-none"/>
                 <p className="select-none">Copyright © 2024 - All rights reserved</p>
             </aside> 
             <div className="grid-flow-col gap-4 md:place-self-center md:justify-self-end flex-wrap">
