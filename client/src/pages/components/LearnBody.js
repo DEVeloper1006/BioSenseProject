@@ -4,6 +4,7 @@ import "../../../node_modules/aos/dist/aos.css";
 import Aos from "aos";
 
 export default function Body () {
+    const [selectedRadio, setSelectedRadio] = useState("accordion-1");
 
     useEffect(() => {
         Aos.init({
@@ -13,6 +14,10 @@ export default function Body () {
         })
     }, []); 
 
+    const handleRadioChange = (event) => {
+        setSelectedRadio(event.target.value);
+    };
+
     return (
         <>
             <div className="h-full mx-auto flex flex-col items-center justify-center p-10 gap-10">
@@ -20,7 +25,7 @@ export default function Body () {
                 <div className="flex flex-col gap-4">
 
                     <div className="learn-container">
-                        <input type="radio" name="my-accordion-3" checked="checked" style={{color:"white"}}/>
+                        <input type="radio" name="my-accordion-3" value="accordion-1" checked={selectedRadio === "accordion-1"} onChange={handleRadioChange} style={{color:"white"}}/>
                         <div className="p-10 flex flex-col gap-10 collapse-title">
                             <h1 className="title" data-aos="fade-right">What is Pneumonia?</h1>
                         </div>
@@ -32,7 +37,7 @@ export default function Body () {
                     </div>
 
                     <div className="learn-container">
-                        <input type="radio" name="my-accordion-3" checked="checked" className="text-white"/>
+                        <input type="radio" name="my-accordion-3" value="accordion-1" checked={selectedRadio === "accordion-1"} onChange={handleRadioChange} className="text-white"/>
                         <div className="p-10 flex flex-col gap-10 collapse-title">
                             <h1 className="title" data-aos="fade-right">Symptoms of Pneumonia</h1>
                         </div>
@@ -44,7 +49,7 @@ export default function Body () {
                     </div>
 
                     <div className="learn-container">
-                        <input type="radio" name="my-accordion-3" checked="checked" className="text-white"/>
+                        <input type="radio" name="my-accordion-3" value="accordion-1" checked={selectedRadio === "accordion-1"} onChange={handleRadioChange} className="text-white"/>
                         <div className="p-10 flex flex-col gap-10 collapse-title">
                             <h1 className="title">Chest X-Ray Usage</h1>
                         </div>

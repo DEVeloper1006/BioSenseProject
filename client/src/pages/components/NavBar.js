@@ -36,7 +36,9 @@ export default function NavBar (){
     return (
         <header className="navbar bg-base-100 flex flex-wrap p-11 sticky top-0 z-40">
             <div className="navbar-start px-3">
-                <Link href="/" className="btn btn-ghost text-xl md:text-2xl lg:text-3xl rounded-xl hover:scale-105">biosense</Link>
+                <Link href="/" passHref legacyBehavior className="btn btn-ghost text-xl md:text-2xl lg:text-3xl rounded-xl hover:scale-105">
+                    <a className="btn btn-ghost text-xl md:text-2xl lg:text-3xl rounded-xl hover:scale-105" onClick={() => location.reload(true)}>biosense</a>
+                </Link>
             </div>
             <div className="navbar-end">
                 <div className="px-3">
