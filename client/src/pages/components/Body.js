@@ -31,7 +31,7 @@ async function sendData(img, setResult) {
         const formData = new FormData();
         formData.append('image', img);
         try {
-            const response = await fetch("https://127.0.0.1:5000/api/home", {
+            const response = await fetch("https://138.197.159.80:8080/api/home", {
                 method: 'POST',
                 body: formData,
             });
