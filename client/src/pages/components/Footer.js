@@ -4,6 +4,7 @@ import Image from "next/image";
 
 const Footer = () => {
 
+    emailjs.init("cxqXcGlsDvssBCvDE")
     function sendEmail () {
         const message = document.getElementById("feedback").value
         if (!message) alert("Please enter feedback before sending")
